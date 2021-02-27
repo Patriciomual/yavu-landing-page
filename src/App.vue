@@ -1,7 +1,7 @@
 <template>
-
-      <HelloWorld/>
-
+  <div>
+      <HelloWorld style="width:100%"/>
+  </div>
 </template>
 
 <script>
