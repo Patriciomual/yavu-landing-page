@@ -2,18 +2,13 @@
   <div>
     <v-row>
       <v-col cols="12">
-        <center>
-          <video width="80%" class="animacionH" height="40%" autoplay muted loop>
-            <source src="https://firebasestorage.googleapis.com/v0/b/trafla-24d65.appspot.com/o/trafla%2Fyavu_logo_parapdeo_blanco.mp4?alt=media&token=80741849-4fe5-4529-88e3-f959559f6d1d" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <br>
-          <p class="letra animacionQ" style="margin-top:1%"><i>Aquí se construye el futuro</i></p>
-          <div class="animacionQ">
-          </div>
-        </center>
+          <logo style="margin-top:-2%"></logo>
       </v-col>
-    </v-row><br>
+    </v-row>
+
+    <v-row>
+      <first-section></first-section>
+    </v-row>
 
     <v-row>
       <v-col>
@@ -42,6 +37,8 @@
         </v-container>
       </v-col>
     </v-row>
+
+    
     <v-footer style="background: black;margin-top:10%" dark>
     <v-row>
       <v-col></v-col>
@@ -76,9 +73,13 @@
 </template>
 
 <script>
+import FirstSection from './firstSection.vue'
+import logo from './logo.vue'
   export default {
     name: 'HelloWorld',
-
+    components: {
+      logo, FirstSection
+    },
     data: () => ({
       height: null,
       width: null,
@@ -104,7 +105,7 @@
       direccion: [
         'mailto:patricio.munoz@alu.ucm.cl',
         'https://www.linkedin.com/in/patricio-nicol%C3%A1s-mu%C3%B1oz-alveal-08a5b9183/',
-        'https://www.instagram.com/soymual/'
+        'https://www.instagram.com/unpatriciomas/'
 
       ]
     }),
@@ -118,6 +119,13 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300&display=swap');
 
+@font-face {
+  font-family: Waxe;
+  src: url('../fonts/Waxe.otf');
+}
+.letterWaxe{
+  font-family: waxe;
+}
 .gradient{
 background: rgb(0,0,0);
 background: linear-gradient(29deg, rgba(0,0,0,1) 0%, rgba(66,17,17,1) 51%, rgba(54,20,20,1) 100%);
@@ -175,7 +183,7 @@ background: linear-gradient(29deg, rgba(0,0,0,1) 0%, rgba(66,17,17,1) 51%, rgba(
     transform: translate(60px, 0px) rotate(360deg);
     -webkit-transform: translate(0px, 0px) rotate(-5deg);
     -o-transform: translate(0px, 0px) rotate(-5deg);
-    -moz-transform: translate(0px, 0px) rotate(-5deg);
+    -moz-transform: translate(0px, 0px) rotate(-3deg);
 }
 .animacionQ {
     transition: all 4s ease-in-out;
@@ -188,5 +196,44 @@ background: linear-gradient(29deg, rgba(0,0,0,1) 0%, rgba(66,17,17,1) 51%, rgba(
     -webkit-transform: translate(0px, 10px) rotate(0deg);
     -o-transform: translate(350px, -350px) rotate(360deg);
     -moz-transform: translate(350px, -350px) rotate(360deg);
+}
+.glitch {
+  font-weight: bold;
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(160, 32, 32, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+
+  animation: glitch 3s infinite;
+}
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(179, 255, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  
+  25% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(172, 20, 66, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 
+      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  
+  75% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
 }
 </style>
