@@ -1,5 +1,5 @@
 <template>
-    <div style="width:100%">
+    <div class="backFirst">
         <v-container>
             <v-row style="margin:2%">
                 <v-col>
@@ -11,11 +11,14 @@
                     <p class="letterLato">
                         💡 -  "Con el diseño adecuado, cualquiera se convierte en nativo digital"  
                     </p><br><br>
-                        <v-btn style="font-size:4vh;padding-bottom:3%;padding-top:3%;border-radius:100px" x-large class="letterWaxe" color="#9b1616" dark :href="contacto">contacto</v-btn>
+                        <v-btn style="border-radius:100px;font-size: 4vh" 
+                            x-large class="letterType"   color="#9b1616" dark :href="contacto">contacto
+                            <v-icon style="margin-left:5%">mdi-email</v-icon>
+                            </v-btn>
                     </center>
                 </v-col>
             </v-row>
-        </v-container>
+        </v-container><br>
     </div>
 </template>
 

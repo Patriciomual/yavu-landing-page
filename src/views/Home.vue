@@ -1,113 +1,50 @@
 <template>
-  <div>
-    <v-row>
-      <v-col cols="12">
-          <logo style="margin-top:-2%"></logo>
-      </v-col>
-    </v-row>
-
-    <v-row>
-      <first-section></first-section>
-    </v-row>
-
-    <v-row>
-      <v-col>
-        <v-container>
-          <v-timeline dense style="width:100%">
-            <v-timeline-item 
-              v-for="(item,id) in items"
-              :key="id"  
-              :icon="item.icon" fill-dot
-              color="#b60e0e">
-                <v-card elevation="10"
-                  class="mx-auto" style="border-radius:20px"
-                  color="grey lighten-4"
-                  max-width="100%" dark
-                >
-                  <v-card-text class="letra"
-                    style="position: relative;"
-                  >
-                    <br>
-                    <div class="letra" v-html="item.item">
-                    </div><br>
-                  </v-card-text>
-                </v-card>
-            </v-timeline-item>
-          </v-timeline>
-        </v-container>
-      </v-col>
-    </v-row>
-
-    
-    <v-footer style="background: black;margin-top:10%" dark>
-    <v-row>
-      <v-col></v-col>
-      <v-col>
-        <center>
-          <img width="200"  style="border-radius:100px"
-                src="https://firebasestorage.googleapis.com/v0/b/trafla-24d65.appspot.com/o/trafla%2Fphoto_2020-07-20_17-14-31.jpg?alt=media&token=11df4044-12bd-47be-a799-ccb2ae68321a" alt="">
-
-          <div>
-            <span class="letra" style="color:#b60e0e"><b style="color:white">Patricio Muñoz </b><br> fundador</span>
+    <div>
+      <v-row class="backLogo">
+        <v-col cols="12">
+            <logo style="margin-top:-2%"></logo>
             <center>
-              <span>
-                <v-btn
-                class="mx-4"
-                v-for="(icon,idx) in icons"
-                :key="idx"
-                :href="direccion[idx]"
-                icon>
-                  <v-icon size="30px">{{ icon }}</v-icon>
-                </v-btn>
-              </span>
-            </center><br>
-            <span  class="letra" style="margin-left:%">{{ new Date().getFullYear() }}</span> 
-          </div>
-          </center>
-      </v-col><v-col></v-col>
-    </v-row> 
-
-    </v-footer>
-
-  </div>
+              <v-icon class="down" style="margin-top:-7%;color:#9b1616" large>mdi-chevron-down</v-icon>
+            </center>
+        </v-col>
+      </v-row>
+      <v-row>
+        <first-section></first-section>
+      </v-row>
+      <v-row class="backSecond">
+        <secondSection></secondSection>
+      </v-row>
+      <v-row class="backThird">
+        <thirdSection></thirdSection>
+      </v-row>
+      <v-row class="backThird">
+        <tecnology></tecnology>
+      </v-row>
+      <v-row>
+        <ecology></ecology>
+      </v-row>
+      <footerComponent></footerComponent>
+      <router-view></router-view>
+    </div>
 </template>
 
 <script>
-import FirstSection from './firstSection.vue'
-import logo from './logo.vue'
+import FirstSection from '../components/firstSection.vue'
+import footerComponent from '../components/footer.vue'
+import logo from '../components/logo.vue'
+import secondSection from '../components/secondSection.vue'
+import thirdSection from '../components/thirdSection.vue'
+import tecnology from '../components/tecnology.vue'
+import ecology from '../components/ecology.vue'
   export default {
-    name: 'HelloWorld',
+    name: 'Home',
     components: {
-      logo, FirstSection
+      logo, FirstSection,footerComponent,secondSection,thirdSection,
+      tecnology,ecology
     },
     data: () => ({
       height: null,
       width: null,
-      items:[
-        {
-          item: 'Échale un ojo a nuestro ERP en construcción  <a href="https://ruil.yavu.org/signin" style="text-decoration:none;color:#b60e0e"><b>RUIL</b></a>',
-          icon: 'mdi-point-of-sale'
-        },
-        {
-          item: 'Puedes revisar nuestra aplicación para la Gestión de tiempo en   <a href="https://trafla.org" style="text-decoration:none;color:#b60e0e"><b>TRAFLA</b></a>',
-          icon: 'mdi-note'
-        },
-        {
-          item: '<a href="https://pangloss.yavu.org/" style="text-decoration:none;color:#b60e0e"><b>PANGLOSS</b></a> un pequeño componente npm para crear tutoriales dinámicos.',
-          icon: 'mdi-grid-large'
-        },
-      ],
-      icons: [
-              'mdi-gmail',
-              'mdi-linkedin',
-              'mdi-instagram',
-          ],
-      direccion: [
-        'mailto:patricio.munoz@alu.ucm.cl',
-        'https://www.linkedin.com/in/patricio-nicol%C3%A1s-mu%C3%B1oz-alveal-08a5b9183/',
-        'https://www.instagram.com/unpatriciomas/'
-
-      ]
     }),
     mounted(){
       this.height = screen.height -90
@@ -235,5 +172,54 @@ background: linear-gradient(29deg, rgba(0,0,0,1) 0%, rgba(66,17,17,1) 51%, rgba(
       -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
       -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   }
+}
+.latidos {
+	display: inline-block;
+	animation: ani_latidos 4s infinite;
+	transform-origin: center;
+}
+@keyframes ani_latidos {
+  0%, 50%, 100% {
+  opacity: 1;
+  }
+  25%, 75% {
+  opacity: 0;
+  }
+}
+.down{
+    animation: down 3s infinite;
+}
+@keyframes down{
+  0%   {top:-40px;}
+  50% {top: 0px}
+  75% {top: 0px}
+  100% {top:-40px;}
+
+}
+.backLogo{
+ background: rgb(94,22,70);
+background: -moz-linear-gradient(16deg, rgba(94,22,70,1) 0%, rgba(27,36,79,1) 100%);
+background: -webkit-linear-gradient(16deg, rgba(94,22,70,1) 0%, rgba(27,36,79,1) 100%);
+background: linear-gradient(16deg, rgba(94,22,70,1) 0%, rgba(27,36,79,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5e1646",endColorstr="#1b244f",GradientType=1); 
+}
+.backFirst{
+  width:100%;
+  color:#1B244F;
+  background: rgb(255,204,33);
+  background: -moz-linear-gradient(2deg, rgba(255,204,33,1) 10%, rgba(233,234,236,1) 10%);
+  background: -webkit-linear-gradient(2deg, rgba(255,204,33,1) 10%, rgba(233,234,236,1) 10%);
+  background: linear-gradient(2deg, rgba(255,204,33,1) 10%, rgba(233,234,236,1) 10%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcc21",endColorstr="#e9eaec",GradientType=1); 
+}
+.backSecond{
+ background: rgb(233,234,236);
+background: -moz-linear-gradient(2deg, rgba(233,234,236,1) 8%, rgba(255,204,33,1) 8%);
+background: -webkit-linear-gradient(2deg, rgba(233,234,236,1) 8%, rgba(255,204,33,1) 8%);
+background: linear-gradient(2deg, rgba(233,234,236,1) 8%, rgba(255,204,33,1) 8%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e9eaec",endColorstr="#ffcc21",GradientType=1); 
+}
+.backThird{
+background: #E9EAEC;
 }
 </style>

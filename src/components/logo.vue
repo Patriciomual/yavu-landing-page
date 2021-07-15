@@ -1,37 +1,15 @@
 <template>
-   <!-- <svg xmlns="http://www.w3.org/2000/svg" width="80%"  viewBox="0 0 1000 500">
-        <text id="yavu" class="cls-1 ani" transform="translate(99 329.365) scale(0.865 0.866)">yavu</text>
-        <text id="_." data-name="." class="cls-2" transform="translate(901 329.206) scale(0.838 0.922)">.</text>
-        <path fill="transparent" stroke="#000000" stroke-width="4"     
-        d="M 10,10 h 10
-          m  0,10 h 10
-          m  0,10 h 10
-          M 40,20 h 10
-          m  0,10 h 10
-          m  10,10 h 500
-          m  0,10 h 10
-          M 50,50 h 10
-          m-50,10 h 10
-          m-20,10 h 10
-          m-20,10 h 10" 
-       class="path"></path>
-
-      <rect x="50" y="50" width="100" height="100" class="cls-2"></rect>
-
-    </svg>-->
-
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    viewBox="0 0 240 120" style="enable-background:new 0 0 240 120;" xml:space="preserve"  width="100%" > 
-
+    viewBox="0 0 240 120" style="enable-background:new 0 0 240 120;" xml:space="preserve"  width="100%"> 
       <circle cx="20" cy="50" r="20" class="cls-4"></circle>
-      <circle cx="20" cy="50" r="40" class="cls-3"></circle>
-      
+      <circle cx="20" cy="50" r="40" class="cls-3"></circle>  
+      <path class="st0" d="M-113.2,641.8C-5.5,561.4,102.3,481,210,400.6c70-52.2,140.3-104.6,217.5-145.4
+        C589.6,169.5,775,138.7,957.7,122.9c190.5-16.5,390.1-16.5,562.9,65.2c171.1,80.9,297.5,233.7,397.2,394.5
+        c48.2,77.8,91.6,158.5,129.8,241.6"/>¿
       <circle cx="20" cy="50" r="15" class="cls-5"></circle>
       <circle cx="20" cy="50" r="10" class="cls-6"></circle>
-
       <text transform="matrix(1 0 0 1 65 70)" class="st0 ani st1">yavu</text>
       <text transform="matrix(1 0 0 1 173 70)" class="st2 st0 st3">.</text>
-      
   </svg>
 </template>
 
@@ -46,12 +24,34 @@ export default {
 </script>
 
 <style>
-.st0{font-family:'Waxe';}
+.st0{
+  font-family:'Waxe';}
 .st1{
   font-size:3em;
-  
+  fill: #e9eaec;
 }
-.st2{fill:#9B1616;}
+.st11{
+  font-size:3em;
+  fill: rgb(0, 0, 0);
+}
+.st2{
+  fill:#9B1616;
+	display: inline-block;
+	animation: color 4s infinite;
+	transform-origin: center;
+}
+@keyframes color {
+  0%, 100% {
+    fill:#9B1616;
+  }
+  25%, 75% {
+    fill:#cc3131;
+  }
+  50%{
+    fill:#690707;
+  }
+
+}
 .st3{font-size:92.2484px;}
 .ani{
     stroke-dasharray: 500;
@@ -68,6 +68,7 @@ export default {
 .cls-1, .cls-2, .cls-3 {
     font-size: 416.667px;
     font-family: Waxe;
+    
 }
 .cls-2 {
     fill: #9B1616;
@@ -75,6 +76,7 @@ export default {
     offset-distance: 0%;
     animation: red-ball 15s alternate infinite;
     opacity: 0.5;
+
 }   
 
 @keyframes red-ball {
@@ -86,18 +88,22 @@ export default {
   }
 }
 .cls-3 {
-    fill: rgb(245, 247, 137);
-    offset-path: path('m20 40 Q 20 20, 25 40 T 20 50 T 20 20 T 10 10');
+    fill: rgb(250, 228, 28);
+    offset-path: path('M-113.2,641.8C-5.5,561.4,102.3,481,210,400.6c70-52.2,140.3-104.6,217.5-145.4 C589.6,169.5,775,138.7,957.7,122.9c190.5-16.5,390.1-16.5,562.9,65.2c171.1,80.9,297.5,233.7,397.2,394.5 c48.2,77.8,91.6,158.5,129.8,241.6');
     offset-distance: 0%;
     animation: red-ball0 15s alternate infinite;
     opacity: 1;
+
+    
 }   
 
 @keyframes red-ball0 {
   from {
     offset-distance: 0%;
+    box-shadow: -0.5rem 0 0.3rem salmon;
   }
   50%{
+    box-shadow: -0.5rem 0 0.3rem salmon;
     offset-distance: 100%;
   }
   to {
@@ -106,11 +112,13 @@ export default {
 
 }
 .cls-4 {
-    fill: rgb(180, 236, 147);
+    fill: rgb(246, 233, 47);
     offset-path: path('m20 50 Q 50 10, 25 40 T 80 20 T 100 50 T 100 50');
     offset-distance: 0%;
     animation: red-ball1 20s alternate infinite;
-    opacity: 0.2;
+    opacity: 0.5;
+    -webkit-filter: blur(2px);
+    filter        : blur(2px);
 }   
 
 @keyframes red-ball1 {
@@ -129,7 +137,9 @@ export default {
     offset-path: path('m20 40 Q 20 10, 55 40 T 60 20 T 10 20 T 10 10');
     offset-distance: 0%;
     animation: red-ball2 10s alternate infinite;
-    opacity: 0.4;
+    opacity: 0.5;
+    -webkit-filter: blur(2px);
+    filter        : blur(2px);
 }   
 
 @keyframes red-ball2 {
@@ -146,6 +156,8 @@ export default {
     offset-distance: 0%;
     animation: red-ball3 20s alternate infinite;
     opacity: 1;
+    -webkit-filter: blur(2px);
+    filter        : blur(2px);
 }   
 
 @keyframes red-ball3 {
